@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="space_mission_mission_view_form">
+			<field name="name">odoo.space.mission.view.form</field>
+			<field name="model">space.mission</field>
+			<field name="arch" type="xml">
+				<form string="Mission form">
+						<header>
+							<button name="action_create_project" type="object" string="Create Project" groups="odoo_space_mission.group_space_mission_admin"/>
+						</header>
+					<sheet>
+						<h1><field name="name" placeholder="Name of the mission"/></h1>
+						<group>
+							<group>
+								<field name="spaceship_id"/>
+								<field name="launch_date"/>
+								<field name="return_date"/>
+							</group>
+							<group>
+								<field name="number_of_engines"/>
+								<field name="fuel_required"/>
+								<field name="safety_features"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Crew Members">
+								<field name="crew_members_ids">
+									<tree>
+										<field name="name"/>
+										<field name="phone"/>
+									</tree>	
+								</field>
+							</page>
+							<page string="Projects">
+								<field name="project_ids"/>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="space_mission_mission_view_tree">
+			<field name="name">odoo.space.mission.view.tree</field>
+			<field name="model">space.mission</field>
+			<field name="arch" type="xml">
+				<tree string="Missions List">
+					<field name="name"/>
+					<field name="spaceship_id"/>
+					<field name="launch_date"/>
+					<field name="return_date"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="space_mission_view_graph">
+			<field name="name">odoo.space.mission.view.graph</field>
+			<field name="model">space.mission</field>
+			<field name="arch" type="xml">
+				<graph string="Missions">
+					<field name="name"/>
+					<field name="safety_features"/>
+					<field name="number_of_engines" type="measure"/>
+					<field name="fuel_required" type="measure"/>
+				</graph>
+			</field>
+		</record>
+	</data>
+</odoo>

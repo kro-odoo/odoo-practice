@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model='ir.ui.view' id="mission_project_inherit_view_form">
+			<field name="name">mission.project.inherit.view.form</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.edit_project"/>
+			<field name="arch" type="xml">
+				<field name="label_tasks" position="before">
+					<field name="mission_id" attrs="{'invisible': [('mission_id', '=', False)]}"/>
+				</field>
+				<xpath expr="//div[@name='dates']" position="after">
+					<field name="spaceship_id"/>
+					<field name="no_of_engines"/>
+					<field name="fuel_type"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

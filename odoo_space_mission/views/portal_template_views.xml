@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="mission_website_controller">
+			<t t-call="portal.portal_layout">
+				<t t-set="title">Odoo Space Missions</t>
+				<t t-esc="missions"/>
+				<tbody>
+					<div class="oe_structure">
+						<div class="container">
+							<h1>Missions</h1>
+							<t t-foreach="missions" t-as="mission">
+								<h3>
+									<t t-esc="mission.id"/>
+									<t t-esc="mission.name"/>
+								</h3>
+								<strong>Launch Date:></strong>
+								<span t-field="mission.launch_date"/>
+								<strong>Return Date:</strong>
+								<span t-field="mission.return_date"/>
+							</t>
+						</div>
+					</div>
+				</tbody>
+			</t>
+		</template>
+	</data>
+</odoo>

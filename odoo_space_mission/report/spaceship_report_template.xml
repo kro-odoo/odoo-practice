@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="spaceship_report" model="ir.actions.report">
+		<field name="name">Spaceship</field>
+		<field name="model">space.spaceship</field>
+		<field name="report_type">qweb-html</field>
+		<field name="report_name">odoo_space_mission.report_spaceship_info</field>
+		<field name="report_file">odoo_space_mission.report_spaceship_info</field>
+		<field name="binding_model_id" ref="model_space_spaceship"/>
+		<field name="binding_type">report</field>
+	</record>
+
+	<template id="report_spaceship_info">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="web.external_layout">
+					<div class="page">
+						<h2 t-field="doc.name"/>
+						<div class="row" id="spaceship_info">
+							<div t-if="doc.spaceship_type" class="col-auto">
+								<strong>Type: </strong>
+								<span t-field="doc.spaceship_type"/>
+							</div>
+							<div t-if="doc.number_of_passengers" class="col-auto">
+								<strong>Number of Passengers: </strong>
+								<span t-field="doc.number_of_passengers"/>
+							</div>
+							<div t-if="doc.description" class="col-auto">
+								<strong>Description: </strong>
+								<span t-field="doc.description"/>
+							</div>
+						</div>
+						<div class="row mt-8 mb-8" id="spaceship_design">
+							<div t-if="doc.width" class="col-auto">
+								<strong>Width: </strong>
+								<span t-field="doc.width"/>
+							</div>
+							<div t-if="doc.length" class="col-auto">
+								<strong>Length: </strong>
+								<span t-field="doc.length"/>
+							</div>
+							<div t-if="doc.fuel_type" class="col-auto">
+								<strong>Fuel Type: </strong>
+								<span t-field="doc.fuel_type"/>
+							</div>
+						</div>
+						<h3>Missions</h3>
+						<table class="table">
+							<thead>
+								<tr>
+									<th name="th_name">Name</th>
+									<th name="th_launch">Launch Date</th>
+									<th name="th_return">Return Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<t t-foreach="mission_ids" t-as="mission">
+									<tr>
+										<td t-if="mission.name" name="td_name">
+											<span t-field="mission.name"/>
+										</td>
+										<td t-if="mission.launch_date" name="td_launch">
+											<span t-field="mission.launch_date"/>
+										</td>
+										<td t-if="mission.return_date" name="td_return">
+											<span t-field="mission.return_date"/>
+										</td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

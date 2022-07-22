@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="mission_project_wizard_view_form">
+			<field name="name">Create Mission Task</field>
+			<field name="model">mission.project.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Create Mission Project">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="mission_id"/>
+								<field name="spaceship_id"/>
+							</group>
+							<group>
+								<field name="no_of_engines"/>
+								<field name="fuel_type"/>
+							</group>
+						</group>
+					</sheet>
+					<footer>
+						<button name="action_generate_project" string="Create Project" class="btn-primary" type="object"/>
+						<button string="Discard" special="cancel" class="btn-secondary"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

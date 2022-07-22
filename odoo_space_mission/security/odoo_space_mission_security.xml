@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="group_space_mission_admin" model="res.groups">
+		<field name="name">Admin/ Odoo Space Mission</field>
+	</record>
+
+	<record id="group_space_mission_crew" model="res.groups">
+		<field name="name">Crew/ Odoo Space Mission</field>
+	</record>
+
+	<record id="group_space_mission_user" model="res.groups">
+		<field name="name">User/ Odoo Space Mission</field>
+	</record>
+</odoo>

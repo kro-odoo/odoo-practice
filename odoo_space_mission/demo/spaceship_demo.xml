@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record id="spaceship_101" model="space.spaceship">
+			<field name="name">Vikas</field>
+			<field name="spaceship_type">rover</field>
+			<field name="fuel_type">solid</field>
+			<field name="active">False</field>
+			<field name="number_of_passengers">12</field>
+			<field name="description">
+				Made in Kerela
+				Weight: 500 pounds
+				Heigt: 160m
+			</field>
+		</record>
+
+		<record id="spaceship_102" model="space.spaceship">
+			<field name="name">Vikram</field>
+			<field name="spaceship_type">orbiter</field>
+			<field name="fuel_type">liquid</field>
+			<field name="active">True</field>
+			<field name="number_of_passengers">14</field>
+			<field name="description">
+				Made in Gujarat
+				Weight: 340 pounds
+				Heigt: 100 m
+			</field>
+		</record>
+
+
+		<record id="spaceship_103" model="space.spaceship">
+			<field name="name">Aviator</field>
+			<field name="spaceship_type">flyby</field>
+			<field name="fuel_type">solid</field>
+			<field name="active">True</field>
+			<field name="number_of_passengers">08</field>
+			<field name="description">
+				Made in Andhra Pradesh
+				Weight: 480 pounds
+				Heigt: 120m
+			</field>
+		</record>
+	</data>
+</odoo>
